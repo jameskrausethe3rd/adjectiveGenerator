@@ -34,7 +34,7 @@ function wordGenerate() {
     var selection;
     selection = word[Math.floor(Math.random()*word.length)];
 
-    getDefinition();
+    //getDefinition(selection);
     
     if (selection.slice(-1)[0] === "y") {
         document.getElementById("generateButton").innerText = selection + "aj"
@@ -43,13 +43,30 @@ function wordGenerate() {
     }
 }
 
-function getDefinition() {
-    fetch("https://www.dictionary.com/browse/sneaky")
-    .then(function() {
-        console.log(response.json());
-    })
-    .catch(function() {
-      // handle the error
-    });
-  
+function getDefinition(word) {
+    const key = '65db1d0d-ac92-4bac-b05f-ef390f6c5cfe';
+    var siteData;
+    var xmlDoc;
+    var parser;
+    var tag;
+    var text;
+    var element;
+
+    parser = new DOMParser();
+    tag = document.createElement("p")
+
+  fetch(`http://www.dictionaryapi.com/api/v1/references/collegiate/xml/${word}?key=${key}`)
+    .then(response => response.text())
+    .then(data => siteData = data)
+    .then(data => console.log(data))
+    .then(() => xmlDoc = parser.parseFromString(siteData,"text/xml"))
+    .then(() => console.log(xmlDoc))
+    //.then(() => console.log(xmlDoc.getElementsByTagName("fl")[0].childNodes[0].nodeValue))
+    //.then(() => console.log(xmlDoc.getElementsByTagName("dt")[0].childNodes[0].nodeValue))
+    //.then(() => console.log(xmlDoc.getElementsByTagName("fw")[0].childNodes[0].nodeValue))
+    .then(() => text = document.createTextNode(xmlDoc.getElementsByTagName("dt")[0].childNodes[0].nodeValue))
+    .then(() => tag.appendChild(text))
+    .then(() => element = document.getElementById("definition"))
+    .then(() => element.appendChild(tag))
+    .catch(error => console.error(error))
 }
