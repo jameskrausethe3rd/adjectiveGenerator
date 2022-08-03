@@ -76,7 +76,7 @@ function getDefinition(word) {
 
 function dailyWord() {
     var today = new Date();
-    var date_to_reply = new Date('2022', '8', '1');
+    var date_to_reply = new Date("2022-08-01");
     var timeinmilisec = today.getTime() - date_to_reply.getTime();
     var wordIndex = Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24));
 
