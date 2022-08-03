@@ -79,13 +79,12 @@ function dailyWord() {
     var date_to_reply = new Date('2022-8-1');
     var timeinmilisec = today.getTime() - date_to_reply.getTime();
     var wordIndex = Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24));
-    console.log(word[wordIndex])
-
-    //document.getElementById("dailyLoader").style.cssText = "preloader-wrapper small active"
 
     if (word[wordIndex].slice(-1)[0] === "y") {
         document.getElementById("dailyWord").innerText = word[wordIndex] + "aj"
+        alert(word[wordIndex] + "aj")
     } else {
         document.getElementById("dailyWord").innerText = word[wordIndex] + "yaj"
+        alert(word[wordIndex] + "yaj")
     }
 }
