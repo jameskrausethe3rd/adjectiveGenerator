@@ -77,9 +77,13 @@ function getDefinition(word) {
 function dailyWord() {
     alert("Testingaj")
     var today = new Date();
+    alert(today)
     var date_to_reply = new Date('2022-8-1');
+    alert(date_to_reply)
     var timeinmilisec = today.getTime() - date_to_reply.getTime();
+    alert(timeinmilisec)
     var wordIndex = Math.ceil(timeinmilisec / (1000 * 60 * 60 * 24));
+    alert(wordIndex)
 
     if (word[wordIndex].slice(-1)[0] === "y") {
         document.getElementById("dailyWord").innerText = word[wordIndex] + "aj"
