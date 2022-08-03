@@ -75,7 +75,7 @@ function getDefinition(word) {
 }
 
 function dailyWord() {
-alert("Testingaj")
+    alert("Testingaj")
     var today = new Date();
     var date_to_reply = new Date('2022-8-1');
     var timeinmilisec = today.getTime() - date_to_reply.getTime();
@@ -84,6 +84,7 @@ alert("Testingaj")
     if (word[wordIndex].slice(-1)[0] === "y") {
         document.getElementById("dailyWord").innerText = word[wordIndex] + "aj"
         alert(word[wordIndex] + "aj")
+        alert("testing")
     } else {
         document.getElementById("dailyWord").innerText = word[wordIndex] + "yaj"
         alert(word[wordIndex] + "yaj")
