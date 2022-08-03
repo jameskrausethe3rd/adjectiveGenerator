@@ -75,6 +75,7 @@ function getDefinition(word) {
 }
 
 function dailyWord() {
+alert("Testingaj")
     var today = new Date();
     var date_to_reply = new Date('2022-8-1');
     var timeinmilisec = today.getTime() - date_to_reply.getTime();
