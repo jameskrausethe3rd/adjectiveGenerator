@@ -78,7 +78,7 @@ function dailyWord() {
     alert("Testingaj")
     var today = new Date();
     alert(today)
-    var date_to_reply = new Date('2022-8-1');
+    var date_to_reply = new Date('2022', '8', '1');
     alert(date_to_reply)
     var timeinmilisec = today.getTime() - date_to_reply.getTime();
     alert(timeinmilisec)
