@@ -90,12 +90,11 @@ function dailyWord() {
 }
 function startTime() {
     var midnight = new Date();
+    var currentTime = new Date();
     midnight.setHours(23, 59, 59, 0)
-    
-
-    let h = midnight.getHours() - today.getHours();
-    let m = midnight.getMinutes() - today.getMinutes();
-    let s = midnight.getSeconds() - today.getSeconds();
+    let h = midnight.getHours() - currentTime.getHours();
+    let m = midnight.getMinutes() - currentTime.getMinutes();
+    let s = midnight.getSeconds() - currentTime.getSeconds();
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('txt').innerHTML = "Time to new Dailyaj: " + h + ":" + m + ":" + s;
