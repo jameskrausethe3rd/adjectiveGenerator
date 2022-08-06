@@ -133,8 +133,8 @@ function checkTime(i) {
 }
 function isYesterday(date) {
     var todayString = today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate()
-    var yesterdayString = yesterday.getFullYear() + "-" + yesterday.getMonth() + "-" + yesterday.getDate()
     const yesterday = new Date();
+    var yesterdayString = yesterday.getFullYear() + "-" + yesterday.getMonth() + "-" + yesterday.getDate()
 
     yesterday.setDate(yesterday.getDate() - 1);
   
