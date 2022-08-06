@@ -33,7 +33,7 @@
                   <div class="collapsible-body white"><div class="card-title" id="txt"></div></div>
                 </li>
               </ul>
-              <ul class="collapsible">
+              <ul>
                 <li>
                   <span class="collapsible-header card-title white">Generateyaj</span>
                 </li>
@@ -41,9 +41,22 @@
                   <div class="collapsible-header white"><a class="waves-effect waves-light btn-large pink" id="generateButton">Generate!</a></div>
                 </li>
               </ul>
+              <ul class="collapsible">
+                <li>
+                  <span class="collapsible-header card-title white">Stats</span>
+                </li>
+                <li>
+                  <div class="collapsible-header white"><a class="waves-effect waves-light btn-large pink">Open!</a></div>
+                  <div class="collapsible-body white"><div class="card-title">
+                    <p id="dailyajStreak">Dailyaj Streak:</p>
+                    <p id="numWordsGenerated">Words Generated:</p>
+                  </div></div>
+                </li>
+              </ul>              
             </div>                       
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <script type="module" src="/script.js"></script>
+    <script type="module" src="/cookie.js" ></script>
 </body>
 </html>
