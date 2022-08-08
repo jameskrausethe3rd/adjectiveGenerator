@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     //Create a streak for people that go to site on the 6th
-    if(today.getFullYear() == 2022 && today.getMonth() == 7 && today.getDate() == 6){
+    if(today.getFullYear() == 2022 && today.getMonth() == 7 && today.getDate() == 7){
         alert("Streak carried over from Monday. Alert will be gone tomorrow")
-        setCookie("dailyajStreak", 6)
+        setCookie("dailyajStreak", 7)
         setCookie("streakDate", today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate())
     }
     if(!getCookie("dailyajStreak")){
@@ -134,14 +134,16 @@ function checkTime(i) {
 function isYesterday(date) {
     var todayString = today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate()
     const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
     var yesterdayString = yesterday.getFullYear() + "-" + yesterday.getMonth() + "-" + yesterday.getDate()
 
-    yesterday.setDate(yesterday.getDate() - 1);
+    console.log(date)
+    console.log(yesterdayString)
   
     if(date == todayString){
         console.log("Already saved!")
     }
-    else if (date === yesterdayString) {
+    else if (date == yesterdayString) {
       setCookie("dailyajStreak", parseInt(getCookie("dailyajStreak")) + 1)
       setCookie("streakDate", todayString)
     }
