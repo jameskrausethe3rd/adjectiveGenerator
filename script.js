@@ -42,9 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     //Create a streak for people that go to site on the 6th
-    if(today.getFullYear() == 2022 && today.getMonth() == 7 && today.getDate() == 7){
+    if(today.getFullYear() == 2022 && today.getMonth() == 7 && today.getDate() == 8){
         alert("Streak carried over from Monday. Alert will be gone tomorrow")
-        setCookie("dailyajStreak", 7)
+        setCookie("dailyajStreak", 8)
         setCookie("streakDate", today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate())
     }
     if(!getCookie("dailyajStreak")){
